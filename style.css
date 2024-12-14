@@ -12,7 +12,6 @@ main {
   margin: 50px auto;
   background-color: white;
   padding: 50px;
-  /* text-align: center; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,9 +77,8 @@ input {
   margin-top: 10px;
   color: green;
 }
-.youResult {
-  text-align: center;
-}
+.youResult,
 .computerResult {
   text-align: center;
+  color: #0056b3;
 }

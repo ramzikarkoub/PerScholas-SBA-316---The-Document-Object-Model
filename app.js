@@ -84,7 +84,7 @@ const resetGame = () => {
 const addHistory = (userChoice, computerChoice, result) => {
   const historyItem = document.createElement("li");
   historyItem.textContent = `You: ${userChoice}, Computer: ${computerChoice}, Result: ${result}`;
-  gameHistory.appendChild(historyItem);
+  gameHistory.textContent = historyItem;
 };
 
 // Clear game history
