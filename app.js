@@ -89,20 +89,13 @@ const displayHistory = (userChoice, computerChoice, comparisonChoice) => {
   gameHistory.appendChild(historyItem);
 };
 
-// Form validation and submission
+// form
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
   const username = form.username.value;
+  const email = form.email.value;
   const feedback = form.feedback.value;
-
   formMessage.textContent = `Thank you, ${username}! Your feedback has been submitted.`;
-  //   formMessage.style.color = "green";
+
   form.reset();
 });
-
-// // BOM Example: Log window dimensions
-// console.log(`Window Dimensions: ${window.innerWidth}x${window.innerHeight}`);
-// window.addEventListener("resize", () => {
-//   console.log(`Window resized to: ${window.innerWidth}x${window.innerHeight}`);
-// });

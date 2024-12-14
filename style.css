@@ -6,15 +6,17 @@ body {
   color: #333;
 }
 
-header {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-
 main {
   padding: 20px;
+  width: 600px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 50px;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -30,15 +32,21 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+h1 {
+  text-align: center;
+}
 
 #game-result {
   font-weight: bold;
   margin-top: 20px;
 }
-#sections {
+#section {
   display: flex;
   justify-content: center;
   gap: 20px;
+  background-color: rgb(227, 240, 249);
+  width: 50%;
+  border-radius: 10px;
 }
 ul {
   list-style: none;
