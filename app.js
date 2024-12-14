@@ -11,7 +11,8 @@ let userScore = 0;
 let computerScore = 0;
 console.log(copmuterResult.textContent);
 console.log(youResult.textContent);
-
+copmuterResult.textContent = 0;
+youResult.textContent = 0;
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     const userChoice = e.target.textContent;
@@ -87,3 +88,21 @@ const displayHistory = (userChoice, computerChoice, comparisonChoice) => {
   historyItem.textContent = `You: ${userChoice}, Computer: ${computerChoice}, Result: ${comparisonChoice}`;
   gameHistory.appendChild(historyItem);
 };
+
+// Form validation and submission
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const username = form.username.value;
+  const feedback = form.feedback.value;
+
+  formMessage.textContent = `Thank you, ${username}! Your feedback has been submitted.`;
+  //   formMessage.style.color = "green";
+  form.reset();
+});
+
+// // BOM Example: Log window dimensions
+// console.log(`Window Dimensions: ${window.innerWidth}x${window.innerHeight}`);
+// window.addEventListener("resize", () => {
+//   console.log(`Window resized to: ${window.innerWidth}x${window.innerHeight}`);
+// });
