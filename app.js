@@ -4,9 +4,13 @@ const resultDisplay = document.querySelector("#game-result");
 const gameHistory = document.querySelector("#game-history");
 const form = document.querySelector("#feedback-form");
 const formMessage = document.querySelector("#form-message");
+const youResult = document.querySelector(".you-result");
+const copmuterResult = document.querySelector(".computer-result");
 const moves = ["Rock", "Paper", "Scissors"];
 let userScore = 0;
 let computerScore = 0;
+console.log(copmuterResult.textContent);
+console.log(youResult.textContent);
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -15,9 +19,10 @@ buttons.forEach((button) => {
     const computerChoice = getComputerChoice();
     console.log(computerChoice);
     const comparisonChoice = determineWinner(userChoice, computerChoice);
-    messageReturned(comparisonChoice);
+    incrementScore(comparisonChoice);
     console.log("hahahahahhahahahahah", userScore);
     console.log("hihihihihihihihihihi", computerScore);
+    updateUIScore(userScore, computerScore);
   });
 });
 const getComputerChoice = () => {
@@ -40,19 +45,22 @@ function determineWinner(player, computer) {
   console.log("you lose");
   return "You lose!";
 }
-// console.log(getComputerChoice());
-console.log(userScore);
-console.log(computerScore);
 
-function messageReturned(comparisonChoice) {
+function incrementScore(comparisonChoice) {
   if (comparisonChoice == "It's a tie!") {
     console.log("tie");
   } else if (comparisonChoice == "You win!") {
     console.log("you win");
-    return (userScore += 1);
+    userScore += 1;
+    computerScore;
+    return userScore;
   } else {
-    console.log("computer win");
+    console.log("you loose");
     computerScore += 1;
     return computerScore;
   }
 }
+const updateUIScore = (userScore, computerScore) => {
+  console.log((copmuterResult.textContent = computerScore));
+  console.log((youResult.textContent = userScore));
+};
