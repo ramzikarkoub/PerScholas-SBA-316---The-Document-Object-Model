@@ -4,13 +4,21 @@ const resultDisplay = document.querySelector("#game-result");
 const gameHistory = document.querySelector("#game-history");
 const form = document.querySelector("#feedback-form");
 const formMessage = document.querySelector("#form-message");
-const moves = ["rock", "paper", "scissors"];
+const moves = ["Rock", "Paper", "Scissors"];
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     const userChoice = e.target.textContent;
     console.log(userChoice);
-    console.log(getComputerChoice());
+    const computerChoice = getComputerChoice();
+    console.log(computerChoice);
+    if (userChoice == "Rock" && computerChoice == "Paper") {
+      console.log("you choosed rock and the computer paper");
+    } else if (userChoice == "Rock" && computerChoice == "Scissors") {
+      console.log("hahahah");
+    } else {
+      console.log("meaw");
+    }
   });
 });
 const getComputerChoice = () => {
