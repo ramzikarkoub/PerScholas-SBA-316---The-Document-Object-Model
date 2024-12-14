@@ -7,9 +7,45 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <main>
+      <section id="game-section">
+        <h2>Choose Your Move</h2>
+        <button class="move-btn" data-move="rock">Rock</button>
+        <button class="move-btn" data-move="paper">Paper</button>
+        <button class="move-btn" data-move="scissors">Scissors</button>
+        <p id="game-result"></p>
+        <ul id="game-history">
+          <li>Game History:</li>
+        </ul>
+      </section>
+      <section id="sections">
+        <div class="youResult">
+          <h2>You</h2>
+          <p id="game-result">12</p>
+        </div>
+        <div class="computerResult">
+          <h2>Computer</h2>
+          <p id="game-result">6</p>
+        </div>
+      </section>
+
+      <section id="form-section">
+        <h2>Feedback Form</h2>
+        <form id="feedback-form">
+          <label for="username">Name:</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="feedback">Feedback:</label>
+          <input type="text" id="feedback" name="feedback" required />
+
+          <button type="submit">Submit</button>
+          <p id="form-message"></p>
+        </form>
+      </section>
+    </main>
     <script src="app.js" async defer></script>
   </body>
 </html>
