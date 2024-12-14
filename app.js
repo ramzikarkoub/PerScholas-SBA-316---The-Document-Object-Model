@@ -7,6 +7,6 @@ const formMessage = document.querySelector("#form-message");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
-    console.log("objectdsdsd");
+    console.log("wazaaup");
   });
 });
