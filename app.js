@@ -20,9 +20,12 @@ buttons.forEach((button) => {
     console.log(computerChoice);
     const comparisonChoice = determineWinner(userChoice, computerChoice);
     incrementScore(comparisonChoice);
-    console.log("hahahahahhahahahahah", userScore);
-    console.log("hihihihihihihihihihi", computerScore);
     updateUIScore(userScore, computerScore);
+    alertWinner(userScore, computerScore);
+
+    const historyItem = document.createElement("li");
+    historyItem.textContent = `You: ${userChoice}, Computer: ${computerChoice}, Result: ${comparisonChoice}`;
+    gameHistory.appendChild(historyItem);
   });
 });
 const getComputerChoice = () => {
@@ -63,4 +66,12 @@ function incrementScore(comparisonChoice) {
 const updateUIScore = (userScore, computerScore) => {
   console.log((copmuterResult.textContent = computerScore));
   console.log((youResult.textContent = userScore));
+};
+
+const alertWinner = (userScore, computerScore) => {
+  if (userScore == 10) {
+    alert("you win!!!!");
+  } else if (computerScore == 10) {
+    alert("computer wins");
+  }
 };
