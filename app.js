@@ -22,10 +22,7 @@ buttons.forEach((button) => {
     incrementScore(comparisonChoice);
     updateUIScore(userScore, computerScore);
     alertWinner(userScore, computerScore);
-
-    const historyItem = document.createElement("li");
-    historyItem.textContent = `You: ${userChoice}, Computer: ${computerChoice}, Result: ${comparisonChoice}`;
-    gameHistory.appendChild(historyItem);
+    displayHistory(userChoice, computerChoice, comparisonChoice);
   });
 });
 const getComputerChoice = () => {
@@ -74,4 +71,10 @@ const alertWinner = (userScore, computerScore) => {
   } else if (computerScore == 10) {
     alert("computer wins");
   }
+};
+
+const displayHistory = (userChoice, computerChoice, comparisonChoice) => {
+  const historyItem = document.createElement("li");
+  historyItem.textContent = `You: ${userChoice}, Computer: ${computerChoice}, Result: ${comparisonChoice}`;
+  gameHistory.appendChild(historyItem);
 };
