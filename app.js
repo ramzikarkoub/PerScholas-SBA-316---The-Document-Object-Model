@@ -21,7 +21,7 @@ buttons.forEach((button) => {
     const comparisonChoice = determineWinner(userChoice, computerChoice);
     incrementScore(comparisonChoice);
     updateUIScore(userScore, computerScore);
-    alertWinner(userScore, computerScore);
+    alertWinner(userScore, computerScore, comparisonChoice);
     displayHistory(userChoice, computerChoice, comparisonChoice);
   });
 });
@@ -65,11 +65,20 @@ const updateUIScore = (userScore, computerScore) => {
   console.log((youResult.textContent = userScore));
 };
 
-const alertWinner = (userScore, computerScore) => {
+const alertWinner = (userScore, computerScore, comparisonChoice) => {
   if (userScore == 10) {
-    alert("you win!!!!");
+    alert(
+      `${comparisonChoice}!!!! you scored ${userScore} Computer scored ${computerScore}`
+    );
+    copmuterResult.textContent = 0;
+    youResult.textContent = 0;
   } else if (computerScore == 10) {
-    alert("computer wins");
+    alert(
+      `${comparisonChoice}!!!! you scored ${userScore} Computer scored ${computerScore}`
+    );
+    copmuterResult.textContent = 0;
+    youResult.textContent = 0;
+    clearHistory();
   }
 };
 
