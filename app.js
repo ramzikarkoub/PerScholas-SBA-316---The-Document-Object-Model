@@ -93,7 +93,7 @@ const addHistory = (userChoice, computerChoice, result) => {
 
 // Clear game history
 const clearHistory = () => {
-  gameHistory.innerHTML = "<li>Game History:</li>";
+  gameHistory.innerHTML = "";
 };
 
 // Handle form submission
