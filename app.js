@@ -83,8 +83,12 @@ const resetGame = () => {
 // Add game history entry
 const addHistory = (userChoice, computerChoice, result) => {
   const historyItem = document.createElement("li");
+  result == "You lose!"
+    ? historyItem.classList.add("red")
+    : historyItem.classList.add("green");
+
   historyItem.textContent = `You: ${userChoice}, Computer: ${computerChoice}, Result: ${result}`;
-  gameHistory.textContent = historyItem;
+  gameHistory.appendChild(historyItem);
 };
 
 // Clear game history
@@ -96,7 +100,6 @@ const clearHistory = () => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const username = form.username.value;
-  const feedback = form.feedback.value;
 
   formMessage.textContent = `Thank you, ${username}! Your feedback has been submitted.`;
   form.reset();
