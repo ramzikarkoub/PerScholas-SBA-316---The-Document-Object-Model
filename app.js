@@ -88,7 +88,7 @@ const addHistory = (userChoice, computerChoice, result) => {
     : historyItem.classList.add("green");
 
   historyItem.textContent = `You: ${userChoice}, Computer: ${computerChoice}, Result: ${result}`;
-  gameHistory.appendChild(historyItem);
+  gameHistory.prepend(historyItem);
 };
 
 // Clear game history
