@@ -64,8 +64,6 @@ const updateUIScores = () => {
   console.log("com, you", computerResult, youResult);
   computerResult.textContent = computerScore;
   youResult.textContent = userScore;
-
-  console.log("com, you", computerResult, youResult);
 };
 
 // Check if someone has won the game
