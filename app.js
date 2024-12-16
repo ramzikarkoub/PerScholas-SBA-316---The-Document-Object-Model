@@ -77,7 +77,7 @@ const resetGame = () => {
   computerScore = 0;
   updateUIScores();
   clearHistory();
-  resultDisplay.textContent = ""; // Clear the result display
+  resultDisplay.textContent = "";
 };
 
 // Add game history entry
