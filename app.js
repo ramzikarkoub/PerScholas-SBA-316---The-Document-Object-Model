@@ -46,7 +46,13 @@ const determineWinner = (player, computer) => {
   }
   return "You lose!";
 };
-
+// Reset the game state
+const resetGame = () => {
+  userScore = 0;
+  computerScore = 0;
+  updateUIScores();
+  clearHistory();
+};
 // Update scores based on the result
 const updateScores = (result) => {
   if (result === "You win!") userScore++;
@@ -55,8 +61,11 @@ const updateScores = (result) => {
 
 // Update scores in the UI
 const updateUIScores = () => {
+  console.log("com, you", computerResult, youResult);
   computerResult.textContent = computerScore;
   youResult.textContent = userScore;
+
+  console.log("com, you", computerResult, youResult);
 };
 
 // Check if someone has won the game
@@ -69,15 +78,6 @@ const checkWinner = () => {
     );
     resetGame();
   }
-};
-
-// Reset the game state
-const resetGame = () => {
-  userScore = 0;
-  computerScore = 0;
-  updateUIScores();
-  clearHistory();
-  resultDisplay.textContent = "";
 };
 
 // Add game history entry
